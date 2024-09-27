@@ -1,0 +1,24 @@
+Eazykhiels
+
+Home Page (list links to all businesses)
+
+Hotels/Apartments page
+-About page
+
+Business Cafe Page
+-About page
+-Online form for work
+-Form fields:
+Request category (printing, editing)
+name
+email
+location
+User comment
+File uploads (optional)
+Request type: 1) print now and pay from wallet 2) print on arrival (cash)
+if print now, can you pay delivery fee? 
+If yes, add delivery fee to total
+If no, you would have to come pick up document(s) at the office
+Go to checkout
+
+Contact Page
