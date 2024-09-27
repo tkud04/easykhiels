@@ -1,6 +1,6 @@
 let devMode = true, currentCounter = 0
   
-let BASE_URL = devMode ? '${BASE_URL}' : 'https://eazykhiels.com'
+let BASE_URL = devMode ? 'index.html' : 'https://eazykhiels.com'
 
 const confirmAction = (actionId,callback) => {
     const v = confirm('Are you sure? This action cannot be undone')
@@ -13,17 +13,21 @@ const confirmAction = (actionId,callback) => {
   const hideValidations = () => {
     $('.nsfdw-validation').hide()
   }
+
+  const setTitle = (txt='') => {
+    $('title').html(txt)
+  }
   
   const initFirebase = () => {
-      const firebaseConfig = {
-        apiKey: "AIzaSyBMNfl4WYs99xRt3strOCeaNAdCBHuk4aE",
-        authDomain: "lashy-projects.firebaseapp.com",
-        projectId: "lashy-projects",
-        storageBucket: "lashy-projects.appspot.com",
-        messagingSenderId: "1019548262418",
-        appId: "1:1019548262418:web:59f6bd06122d39aeb3b8cb",
-        measurementId: "G-VDEVYCMQ8Z"
-        }
+    const firebaseConfig = {
+      apiKey: "AIzaSyBTjH4UsCA92j8dQj-kNdm1BHtoCOeRdwg",
+      authDomain: "eazykhiels.firebaseapp.com",
+      projectId: "eazykhiels",
+      storageBucket: "eazykhiels.appspot.com",
+      messagingSenderId: "426924287228",
+      appId: "1:426924287228:web:939f5dfde73b2eed6e2379",
+      measurementId: "G-W4CJWX9BQ4"
+    };
       
         // Initialize Firebase
         const app = firebase.initializeApp(firebaseConfig)
@@ -55,6 +59,162 @@ const confirmAction = (actionId,callback) => {
     return Math.floor(Math.random() * max)
   }
 
+  const addBusiness = (
+    data={
+      name,
+      xfEmail,
+      xfAmount,
+      xfOtherAmount,
+      xfCause,
+      xfCountry
+    },
+    successCallback,errorCallback) => {
+    const db = getDB()
+    data.date = new Date().toISOString()
+    const dnum = `SAP${getSapNumber(999999)}`
+    db.collection('donation-1-results').doc(dnum)
+    .set({
+        ...data,
+        date: data.date
+    })
+    .then(() => {
+       typeof successCallback === 'function' && successCallback()
+    })
+    .catch(err => {
+        typeof errorCallback === 'function' && errorCallback(err)
+    })
+  }
+
+  const getBusinesses = (successCallback,errorCallback,type='active') => {
+    const db = getDB()
+    let coll = null
+  
+    if(type === 'active'){
+       coll =  db.collection('eazykhiel-businesses').where('status','==','active')
+    }
+    else if(type === 'all'){
+      coll =  db.collection('eazykhiel-businesses')
+    }
+  
+      coll?.get()
+      .then((querySnapshot) => {
+        typeof successCallback === 'function' && successCallback(querySnapshot)
+      })
+      .catch((err) => {
+        console.log('error in getSenders: ',err)
+        typeof errorCallback === 'function' && errorCallback(err)
+      })
+  }
+
+  const updateSender = (data={
+      xf:'',
+      senderName:'',
+      status:''
+    }) => {
+      const db = getDB()
+      data.date = new Date().toISOString()
+
+      const snum = data.xf
+      db.collection('nsfdw-senders').doc(snum)
+        .update({
+           ...data,
+           date: data.date
+         })
+         .then(() => {
+          typeof successCallback === 'function' && successCallback()
+        })
+        .catch(err => {
+          console.log('Failed to update sender: ',err)
+          typeof errorCallback === 'function' && errorCallback(err)
+        })
+   }
+
+   const updateConfig = (value,successCallback,errorCallback) => {
+    const db = getDB()
+
+    const snum = 'sms_count'
+    db.collection('nsfdw-configs').doc(snum)
+      .update({
+         value,
+         date: new Date().toISOString()
+       })
+       .then(() => {
+        typeof successCallback === 'function' && successCallback()
+      })
+      .catch(err => {
+        console.log('Failed to update config: ',err)
+        typeof errorCallback === 'function' && errorCallback(err)
+      })
+ }
+
+ const addXF = (
+  data={
+    xfName,
+    xfEmail,
+    xfAmount,
+    xfOtherAmount,
+    xfCause,
+    xfCountry
+  },
+  successCallback,errorCallback) => {
+  const db = getDB()
+  data.date = new Date().toISOString()
+  const dnum = `SAP${getSapNumber(999999)}`
+  db.collection('donation-1-results').doc(dnum)
+  .set({
+      ...data,
+      date: data.date
+  })
+  .then(() => {
+     typeof successCallback === 'function' && successCallback()
+  })
+  .catch(err => {
+      typeof errorCallback === 'function' && errorCallback(err)
+  })
+}
+
+const getXF = (successCallback,errorCallback,type='all') => {
+  const db = getDB()
+  let coll = null
+
+  if(type === 'active'){
+     coll =  db.collection('donation-1-results').where('status','==','active')
+  }
+  else if(type === 'all'){
+    coll =  db.collection('donation-1-results')
+  }
+
+    coll?.get()
+    .then((querySnapshot) => {
+      typeof successCallback === 'function' && successCallback(querySnapshot)
+    })
+    .catch((err) => {
+      typeof errorCallback === 'function' && errorCallback(err)
+    })
+}
+
+
+const removeXF = (id,successCallback,errorCallback) => {
+  const db = getDB()
+  const docRef = db.collection('donation-1-results').doc(id)
+
+  docRef?.delete()
+  .then(() => {
+     typeof successCallback === 'function' && successCallback()
+  })
+  .catch((err) => {
+      typeof errorCallback === 'function' && errorCallback(err)
+  })
+}
+
+const hideXFValidations = () => {
+  $('.xf-validation').hide()
+  $('#xf-loading-div').hide()
+  $('#xf-amount-selected').hide()
+  $('#xf-amount-display:last').remove()
+}
+
+
 
 
   /********************** COMPONENTS *****************************/
@@ -70,7 +230,7 @@ const confirmAction = (actionId,callback) => {
 
       <nav id="navmenu" class="navmenu">
         <ul>
-          <li><a href="${BASE_URL}#hero" class="active">Home</a></li>
+          <li><a href="${BASE_URL}" class="active">Home</a></li>
           <li><a href="${BASE_URL}#about">About</a></li>
           <li><a href="${BASE_URL}#features">Features</a></li>
           <li><a href="${BASE_URL}#services">Services</a></li>
@@ -111,7 +271,7 @@ const confirmAction = (actionId,callback) => {
     <div class="container footer-top">
       <div class="row gy-4">
         <div class="col-lg-4 col-md-6 footer-about">
-          <a href="index.html" class="logo d-flex align-items-center">
+          <a href="${BASE_URL}" class="logo d-flex align-items-center">
             <span class="sitename">QuickStart</span>
           </a>
           <div class="footer-contact pt-3">
@@ -174,6 +334,37 @@ const confirmAction = (actionId,callback) => {
         Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
       </div>
     </div>
+    `
+
+    return ret
+  }
+
+  const renderLoading = () => {
+    const ret = `
+    
+    `
+
+    return ret
+  }
+
+  const renderServiceItem = ({
+    id='#',color='cyan',
+    icon='business-check',title='Eazykhiels International',
+    buttonText='View',
+    ctr=1
+   }) => {
+    const vu = `${id}.html`
+    const ret = `
+     <div class="col-lg-6" data-aos="fade-up" data-aos-delay="${ctr * 100}">
+            <div class="service-item item-${color} position-relative">
+              <i class="bi bi-${icon} icon"></i>
+              <div>
+                <h3>${title}</h3>
+                <p>${description}</p>
+                <a href="${vu}" class="read-more stretched-link">${buttonText} <i class="bi bi-arrow-right"></i></a>
+              </div>
+            </div>
+          </div><!-- End Service Item -->
     `
 
     return ret
