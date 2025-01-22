@@ -1,2 +1,0 @@
-# eazykhiels
-Corporate website
