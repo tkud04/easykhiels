@@ -2313,7 +2313,7 @@ header.sticky nav.header-light-transparent .logo .logo-light, header.sticky nav.
 .navbar-top-scroll {position: absolute; top: 0; z-index: 5;}
 header.sticky nav.navbar-top-scroll {background-color: inherit;}
 header a.logo {display: inline-block; vertical-align: middle;}
-header a.logo img {max-height:26px;}
+/*header a.logo img {max-height:26px;}*/
 header .left-nav .sidebar-part1 a.logo img {max-height:inherit;}
 .logo-holder img {max-height: 26px;}
 
