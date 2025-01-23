@@ -1532,9 +1532,6 @@
 
         SetResizeContent();
         
-        /* demo button */
-        var $buythemediv = '<div class="buy-theme alt-font d-none d-lg-block"><a href="https://themeforest.net/item/pofo-creative-agency-corporate-and-portfolio-multipurpose-template/20645944?ref=themezaa" target="_blank"><i class="ti-shopping-cart"></i><span>Buy Theme</span></a></div><div class="all-demo alt-font d-none d-lg-block"><a href="mailto:info@themezaa.com?subject=POFO - Creative Agency, Corporate and Portfolio Multi-purpose Template - Quick Question"><i class="ti-email"></i><span>Quick Question?</span></a></div>';
-        $('body').append($buythemediv);
 
         $(document).on("touchstart", ".sidebar-wrapper", function () {
             clearOpen();
