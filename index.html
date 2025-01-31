@@ -31,9 +31,11 @@
                 <div class="container-lg nav-header-container">
                     <!-- start logo -->
                     <div class="col-auto ps-0">
-                        <a href="index.html" title="Eazykhiels International" class="logo" style="width: 70px; height: 70px;">
-                           <img src="images/logo.gif" data-at2x="images/logo.gif" class="logo-dark default" alt="Eazykhiels International">
+                        <a href="index.html" title="Eazykhiels International" class="logo" style="color: #fff;">
+                          <!-- <img src="images/logo.gif" data-at2x="images/logo.gif" class="logo-dark default" alt="Eazykhiels International">
                             <img src="images/logo.gif" data-at2x="images/logo.gif" alt="Eazykhiels International" class="logo-light">
+                        -->
+                            Easykhiels International
                         </a>
                     </div>
                     <!-- end logo -->
@@ -200,7 +202,7 @@
                                 <i class="fa-solid fa-magnifying-glass search-button"></i>
                             </a>
                             <!-- search input-->
-                            <form id="search-header" method="post" action="search-result.html" name="search-header" class="mfp-hide search-form-result">
+                            <form id="search-header" method="post" action="#" name="search-header" class="mfp-hide search-form-result">
                                 <div class="search-form position-relative">
                                     <button type="submit" class="fa-solid fa-magnifying-glass close-search search-button"></button>
                                     <input type="text" name="search" class="search-input" placeholder="Enter your keywords..." autocomplete="off">
@@ -218,22 +220,51 @@
                 </div>
             </nav>
             <!-- end navigation -->
+            <!-- start cafe-as-a-service widget -->
             <div class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-right" id="cbp-spmenu-s2">
                 <button class="close-button-menu side-menu-close" id="close-pushmenu"></button>
                 <div class="row w-100 h-100 text-center align-items-center justify-content-center m-0">
                     <div class="padding-twelve-all">
-                        <div class="col-12 margin-70px-bottom">
-                            <img src="images/logo-black-big.png" alt=""/>
-                        </div>
-                        <div class="col-12 margin-70px-bottom">
-                            <img src="images/sidebar-image1.png" alt=""/>
-                        </div>
                         <div class="col-12">
+                            <img src="images/logo.gif" style="height: 150px;" alt="Easykhiels International"/>
+
                             <h5 class="alt-font text-extra-dark-gray">
-                                <span class="d-block font-weight-300 text-dark-gray">The world's most</span>
-                                <strong>powerful website builder.</strong>
+                                <span class="d-block font-weight-300 text-dark-gray">Business Cafe</span>
+                                <strong>Service Point</strong>
                             </h5>
+
+                            <form id="project-contact-form" action="email-templates/contact-form.php" method="post">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <div class="form-results d-none"></div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <input type="text" name="name" id="name" placeholder="Name *" class="big-input required">
+                                    </div>
+                                    <div class="col-md-6">
+                                        <input type="tel" name="phone" id="phone" placeholder="Phone" class="big-input">
+                                    </div>
+                                    <div class="col-md-6">
+                                        <input type="email" name="email" id="email" placeholder="E-mail *" class="big-input required">
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="select-style big-select">
+                                            <select name="budget" id="budget" class="bg-transparent mb-0">
+                                                <option value="">Select your budget</option>
+                                                <option value="$500 - $1000">$500 - $1000</option>
+                                                <option value="$1000 - $2000">$1000 - $2000</option>
+                                                <option value="$2000 - $5000">$2000 - $5000</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <textarea name="comment" id="comment" placeholder="Describe your project" rows="6" class="big-textarea"></textarea>
+                                    </div>
+                                   
+                                </div>
+                            </form>
                         </div>
+                       
                         <div class="col-12">
                             <a href="https://1.envato.market/g7jrr" target="_blank" class="btn btn-deep-pink btn-small text-extra-small border-radius-4">
                                 <i class="fa-solid fa-circle-play icon-very-small margin-5px-right no-margin-left" aria-hidden="true"></i>
@@ -261,8 +292,8 @@
                         </div>
                     </div>
                 </div>
-            </div>
-            <!-- end navigation -->
+            </div> 
+            <!-- end cafe-as-a-service widget -->
         </header>
         <!-- end header -->
         <!-- start slider section -->
