@@ -53,6 +53,34 @@
                                     <a href="index.html"><i class="ti-home"></i></a>
                                 </li>
                                 <li class="dropdown megamenu-fw">
+                                    <a href="#">Contact Us</a><i class="fa-solid fa-angle-down dropdown-toggle" data-bs-toggle="dropdown" aria-hidden="true"></i>
+                                    <div class="menu-back-div dropdown-menu megamenu-content mega-menu collapse mega-menu-full icon-list-menu animated animate__fadeOut" style="top: 72px; display: none; opacity: 1;">
+                                        <ul>
+                                            <!-- start sub menu column  -->
+                                            <li class="mega-menu-column col-12 col-lg-4">
+                                                <!-- start sub menu item  -->
+                                                <ul>
+                                                    <li class="dropdown-header">Contact</li>
+                                                    <li><a href="contact.html"><i class="ti-layout-accordion-separated"></i> View contact information</a></li>
+                                                </ul>
+                                                <!-- end sub menu item  -->
+                                            </li>
+                                            <!-- end sub menu column -->
+                                              <!-- start sub menu column  -->
+                                            <li class="mega-menu-column col-12 col-lg-4">
+                                                <!-- start sub menu item  -->
+                                                <ul>
+                                                    <li class="dropdown-header">Cafe</li>
+                                                    <li><a href="#" id="showRightPush"><i class="ti-layout-accordion-separated"></i> Cafe as a service</a></li>
+                                                </ul>
+                                                <!-- end sub menu item  -->
+                                            </li>
+                                            <!-- end sub menu column -->
+                                        </ul>
+                                        <!-- end sub menu -->
+                                    </div>
+                                </li>
+                                <li class="dropdown megamenu-fw">
                                     <a href="#">Who we are</a><i class="fa-solid fa-angle-down dropdown-toggle" data-bs-toggle="dropdown" aria-hidden="true"></i>
                                     <!-- start sub menu -->
                                     <div class="menu-back-div dropdown-menu megamenu-content mega-menu collapse mega-menu-full icon-list-menu animated animate__fadeOut" style="top: 72px; display: none; opacity: 1;">
@@ -164,35 +192,7 @@
                                         </ul>
                                     </div>
                                 </li>
-                                <li class="dropdown megamenu-fw">
-                                    <a href="#">Contact Us</a><i class="fa-solid fa-angle-down dropdown-toggle" data-bs-toggle="dropdown" aria-hidden="true"></i>
-                                    <div class="menu-back-div dropdown-menu megamenu-content mega-menu collapse mega-menu-full icon-list-menu animated animate__fadeOut" style="top: 72px; display: none; opacity: 1;">
-                                        <ul>
-                                            <!-- start sub menu column  -->
-                                            <li class="mega-menu-column col-12 col-lg-4">
-                                                <!-- start sub menu item  -->
-                                                <ul>
-                                                    <li class="dropdown-header">Contact</li>
-                                                    <li><a href="contact.html"><i class="ti-layout-accordion-separated"></i> View contact information</a></li>
-                                                </ul>
-                                                <!-- end sub menu item  -->
-                                            </li>
-                                            <!-- end sub menu column -->
-                                              <!-- start sub menu column  -->
-                                            <li class="mega-menu-column col-12 col-lg-4">
-                                                <!-- start sub menu item  -->
-                                                <ul>
-                                                    <li class="dropdown-header">Cafe</li>
-                                                    <li><a href="#" id="showRightPush"><i class="ti-layout-accordion-separated"></i> Cafe as a service</a></li>
-                                                </ul>
-                                                <!-- end sub menu item  -->
-                                            </li>
-                                            <!-- end sub menu column -->
-                                        </ul>
-                                        <!-- end sub menu -->
-                                        </ul>
-                                    </div>
-                                </li>
+                                
                             </ul>
                         </div>
                     </div>
@@ -227,32 +227,34 @@
                                 <strong>Service Point</strong>
                             </h5>
 
-                            <form id="project-contact-form" action="email-templates/contact-form.php" method="post">
+                            <form id="project-contact-form" action="#" method="post">
                                 <div class="row">
                                     <div class="col-12">
                                         <div class="form-results d-none"></div>
                                     </div>
                                     <div class="col-md-6">
-                                        <input type="text" name="name" id="name" placeholder="Name *" class="big-input required">
-                                    </div>
-                                    <div class="col-md-6">
-                                        <input type="tel" name="phone" id="phone" placeholder="Phone" class="big-input">
-                                    </div>
-                                    <div class="col-md-6">
-                                        <input type="email" name="email" id="email" placeholder="E-mail *" class="big-input required">
-                                    </div>
-                                    <div class="col-md-6">
                                         <div class="select-style big-select">
-                                            <select name="budget" id="budget" class="bg-transparent mb-0">
-                                                <option value="">Select your budget</option>
-                                                <option value="$500 - $1000">$500 - $1000</option>
-                                                <option value="$1000 - $2000">$1000 - $2000</option>
-                                                <option value="$2000 - $5000">$2000 - $5000</option>
+                                            <select name="budget" id="caas-types" class="bg-transparent mb-0">
+                                                <option value="none">Job type</option>
+                                                <option value="printing">Print documents</option>
+                                                <option value="typing">Type documents</option>
+                                                <option value="editing">Edit documents</option>
+                                                <option value="letterhead">Letterhead design</option>
                                             </select>
                                         </div>
                                     </div>
+                                    <div class="col-md-6">
+                                        <input type="text" name="name" id="caas-name" placeholder="Name *" class="big-input required">
+                                    </div>
+                                    <div class="col-md-6">
+                                        <input type="tel" name="phone" id="caas-phone" placeholder="Phone" class="big-input">
+                                    </div>
+                                    <div class="col-md-6">
+                                        <input type="email" name="email" id="caas-email" placeholder="E-mail *" class="big-input required">
+                                    </div>
+                                   
                                     <div class="col-12">
-                                        <textarea name="comment" id="comment" placeholder="Describe your project" rows="6" class="big-textarea"></textarea>
+                                        <textarea name="comment" id="caas-comment" placeholder="Describe your job" rows="6" class="big-textarea"></textarea>
                                     </div>
                                    
                                 </div>
@@ -260,9 +262,9 @@
                         </div>
                        
                         <div class="col-12">
-                            <a href="https://1.envato.market/g7jrr" target="_blank" class="btn btn-deep-pink btn-small text-extra-small border-radius-4">
+                            <a href="#" class="btn btn-deep-pink btn-small text-extra-small border-radius-4" id="caas-btn">
                                 <i class="fa-solid fa-circle-play icon-very-small margin-5px-right no-margin-left" aria-hidden="true"></i>
-                                Purchase Now
+                                Submit job
                             </a>
                         </div>
                         <div class="col-12 margin-100px-top text-center">
