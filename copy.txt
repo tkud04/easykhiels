@@ -35,3 +35,26 @@ Sed your jobs online, pick up on arrival
  4. Graphic Design - (laptop icon)
     Reach out to your ideal audience and take your business to the next level with our stunning, unique and professional graphic designs. Logos, flyers, complimentary cards, letter head designs etc
 
+
+What We Do
+Subtitle: It all starts from here! What are you interested in? Lets make it EASY for you
+
+Categories
+title: Computer Training
+subject: Ensure a brighter digital future for yourself or your kids
+
+title: Business Cafe
+subject: save less time handling your business needs
+
+title: Send items with DHL
+subject: Super fast and secure logistics. Doorstep delivery all over the world.
+
+title: Hospitality
+subject: bar, hotel, luxury apartments for your pleasure
+
+title: Photo Studio
+subject: Create lasting memories, showcase your products
+
+title: Real Estate
+subject: Property acquisitions, renovations, rentals or lease 
+
