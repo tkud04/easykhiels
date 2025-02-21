@@ -58,3 +58,17 @@ subject: Create lasting memories, showcase your products
 title: Real Estate
 subject: Property acquisitions, renovations, rentals or lease 
 
+
+Features box copy
+icon: hotdog
+title: Shawarma / grill
+info: Grilled chicken and shawarma, served to fill you with satisfaction and your face with smiles
+
+icon: bed
+title: Hotels / luxury apartments
+info: Escape to the comfort of 69 Hotels and Luxury Apartments, there is a perfect room for you
+
+icon: glasses
+title: Bar / Lounge
+info: The living room of the neighbourhood, Bar69's position as the pinnacle of nightlife in E/B West is unmatched. Come have a drink or two! 
+
