@@ -72,3 +72,8 @@ icon: glasses
 title: Bar / Lounge
 info: The living room of the neighbourhood, Bar69's position as the pinnacle of nightlife in E/B West is unmatched. Come have a drink or two! 
 
+Footer
+About
+Easykhiel's International - a vast network of products and services to make life <b>EASY</b><br>
+Open doors to new career opportunities by taking our computer training courses. Save time and money by handling your 
+business needs in our cafe
